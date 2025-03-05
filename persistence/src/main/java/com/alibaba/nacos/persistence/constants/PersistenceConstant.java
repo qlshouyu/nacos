@@ -35,6 +35,10 @@ public class PersistenceConstant {
     public static final String MYSQL = "mysql";
     
     public static final String DERBY = "derby";
+
+    public static final String DM = "dm";
+
+    public static final String KINGBASE8 = "kingbase8";
     
     public static final String EMPTY_DATASOURCE_PLATFORM = "";
     

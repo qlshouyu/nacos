@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.plugin.datasource.constants;
+package com.alibaba.nacos.plugin.datasource.impl.king;
+
+import com.alibaba.nacos.plugin.datasource.enums.mysql.TrustedMysqlFunctionEnum;
+import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 
 /**
- * The data source name.
+ * The abstract mysql mapper contains CRUD methods.
  *
- * @author hyx
+ * @author 高露
  **/
+public abstract class AbstractMapperByKing extends AbstractMapper {
 
-public class DataSourceConstant {
-    public static final String MYSQL = "mysql";
-    
-    public static final String DERBY = "derby";
-
-    public static final String DM = "dm";
-
-    public static final String KINGBASE8 = "kingbase8";
+    @Override
+    public String getFunction(String functionName) {
+        return TrustedMysqlFunctionEnum.getFunctionByName(functionName);
+    }
 }

@@ -34,6 +34,10 @@
             <artifactId>nacos-common</artifactId>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.iflytek.scv</groupId>
+            <artifactId>kingbase8</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

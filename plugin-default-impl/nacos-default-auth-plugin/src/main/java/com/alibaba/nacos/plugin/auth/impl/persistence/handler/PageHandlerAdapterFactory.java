@@ -16,9 +16,11 @@
 
 package com.alibaba.nacos.plugin.auth.impl.persistence.handler;
 
-import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DefaultPageHandlerAdapter;
-import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DerbyPageHandlerAdapter;
 import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.MysqlPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DmPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.KingPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DerbyPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DefaultPageHandlerAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,8 +49,8 @@ public class PageHandlerAdapterFactory {
     }
 
     private PageHandlerAdapterFactory() {
-        List<PageHandlerAdapter> handlerAdapters = new ArrayList<>(3);
-        Map<String, PageHandlerAdapter> handlerAdapterMap = new HashMap<>(3);
+        List<PageHandlerAdapter> handlerAdapters = new ArrayList<>(5);
+        Map<String, PageHandlerAdapter> handlerAdapterMap = new HashMap<>(5);
         Consumer<PageHandlerAdapter> addHandlerAdapter = handlerAdapter -> {
             handlerAdapters.add(handlerAdapter);
             handlerAdapterMap.put(handlerAdapter.getClass().getName(), handlerAdapter);
@@ -57,8 +59,13 @@ public class PageHandlerAdapterFactory {
         addHandlerAdapter.accept(new MysqlPageHandlerAdapter());
         // DerbyPageHandlerAdapter
         addHandlerAdapter.accept(new DerbyPageHandlerAdapter());
+        // DmPageHandlerAdapter
+        addHandlerAdapter.accept(new DmPageHandlerAdapter());
+        // DmPageHandlerAdapter
+        addHandlerAdapter.accept(new KingPageHandlerAdapter());
         // DefaultPageHandlerAdapter
         addHandlerAdapter.accept(new DefaultPageHandlerAdapter());
+
         this.handlerAdapters = Collections.unmodifiableList(handlerAdapters);
         this.handlerAdapterMap = Collections.unmodifiableMap(handlerAdapterMap);
     }

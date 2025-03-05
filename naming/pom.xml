@@ -91,6 +91,10 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.iflytek.scv</groupId>
+            <artifactId>kingbase8</artifactId>
+        </dependency>
         
         <!-- log -->
         <!-- log4j通过slf4j来代理 -->

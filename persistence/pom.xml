@@ -63,6 +63,10 @@
             <artifactId>derby</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.iflytek.scv</groupId>
+            <artifactId>kingbase8</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <scope>test</scope>

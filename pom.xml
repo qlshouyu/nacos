@@ -137,6 +137,7 @@
         <log4j.version>2.17.1</log4j.version>
         
         <mysql-connector-java.version>8.2.0</mysql-connector-java.version>
+        <kingbase8.version>9.0.0</kingbase8.version>
         <derby.version>10.14.2.0</derby.version>
         <jjwt.version>0.11.2</jjwt.version>
         <grpc-java.version>1.64.2</grpc-java.version>
@@ -945,6 +946,12 @@
                 <artifactId>mysql-connector-j</artifactId>
                 <version>${mysql-connector-java.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.iflytek.scv</groupId>
+                <artifactId>kingbase8</artifactId>
+                <version>${kingbase8.version}</version>
+            </dependency>
             
             <dependency>
                 <groupId>org.apache.derby</groupId>
@@ -1081,6 +1088,13 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
+    <repositories>
+        <repository>
+            <id>mvn-repo</id>
+            <name>mvn-repo</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>
 

@@ -72,7 +72,7 @@ public class MapperManager {
                     mapper.getClass(), mapper.getDataSource(), mapper.getTableName());
         }
     }
-    
+
     /**
      * To join mapper in MAPPER_SPI_MAP.
      * @param mapper The mapper you want join.
@@ -87,7 +87,7 @@ public class MapperManager {
     
     private static void putMapper(Mapper mapper) {
         Map<String, Mapper> mapperMap = MAPPER_SPI_MAP.computeIfAbsent(mapper.getDataSource(), key ->
-                new HashMap<>(16));
+                new HashMap<>(32));
         mapperMap.putIfAbsent(mapper.getTableName(), mapper);
     }
     
