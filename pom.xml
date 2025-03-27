@@ -138,6 +138,7 @@
         
         <mysql-connector-java.version>8.2.0</mysql-connector-java.version>
         <kingbase8.version>9.0.0</kingbase8.version>
+        <pgsql.version>42.7.2</pgsql.version>
         <derby.version>10.14.2.0</derby.version>
         <jjwt.version>0.11.2</jjwt.version>
         <grpc-java.version>1.64.2</grpc-java.version>
@@ -156,6 +157,8 @@
         <spring.version>5.3.39</spring.version>
         <spring-security.version>5.8.15</spring-security.version>
         <tomcat.version>9.0.98</tomcat.version>
+
+
     </properties>
     <!-- == -->
     <!-- =========================================================Build plugins================================================ -->
@@ -952,7 +955,11 @@
                 <artifactId>kingbase8</artifactId>
                 <version>${kingbase8.version}</version>
             </dependency>
-            
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${pgsql.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.derby</groupId>
                 <artifactId>derby</artifactId>

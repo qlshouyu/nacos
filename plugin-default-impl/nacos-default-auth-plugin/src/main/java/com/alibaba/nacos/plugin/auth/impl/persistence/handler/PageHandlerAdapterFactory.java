@@ -17,11 +17,11 @@
 package com.alibaba.nacos.plugin.auth.impl.persistence.handler;
 
 import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.MysqlPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DerbyPageHandlerAdapter;
 import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DmPageHandlerAdapter;
 import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.KingPageHandlerAdapter;
-import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DerbyPageHandlerAdapter;
+import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.PgsqlPageHandlerAdapter;
 import com.alibaba.nacos.plugin.auth.impl.persistence.handler.support.DefaultPageHandlerAdapter;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,8 +49,8 @@ public class PageHandlerAdapterFactory {
     }
 
     private PageHandlerAdapterFactory() {
-        List<PageHandlerAdapter> handlerAdapters = new ArrayList<>(5);
-        Map<String, PageHandlerAdapter> handlerAdapterMap = new HashMap<>(5);
+        List<PageHandlerAdapter> handlerAdapters = new ArrayList<>(6);
+        Map<String, PageHandlerAdapter> handlerAdapterMap = new HashMap<>(6);
         Consumer<PageHandlerAdapter> addHandlerAdapter = handlerAdapter -> {
             handlerAdapters.add(handlerAdapter);
             handlerAdapterMap.put(handlerAdapter.getClass().getName(), handlerAdapter);
@@ -63,6 +63,9 @@ public class PageHandlerAdapterFactory {
         addHandlerAdapter.accept(new DmPageHandlerAdapter());
         // DmPageHandlerAdapter
         addHandlerAdapter.accept(new KingPageHandlerAdapter());
+
+        addHandlerAdapter.accept(new PgsqlPageHandlerAdapter());
+
         // DefaultPageHandlerAdapter
         addHandlerAdapter.accept(new DefaultPageHandlerAdapter());
 

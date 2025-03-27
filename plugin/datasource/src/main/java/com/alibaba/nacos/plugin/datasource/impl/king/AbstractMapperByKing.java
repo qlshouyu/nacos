@@ -16,7 +16,7 @@
 
 package com.alibaba.nacos.plugin.datasource.impl.king;
 
-import com.alibaba.nacos.plugin.datasource.enums.mysql.TrustedMysqlFunctionEnum;
+import com.alibaba.nacos.plugin.datasource.enums.king.TrustedKingFunctionEnum;
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 
 /**
@@ -28,6 +28,6 @@ public abstract class AbstractMapperByKing extends AbstractMapper {
 
     @Override
     public String getFunction(String functionName) {
-        return TrustedMysqlFunctionEnum.getFunctionByName(functionName);
+        return TrustedKingFunctionEnum.getFunctionByName(functionName);
     }
 }

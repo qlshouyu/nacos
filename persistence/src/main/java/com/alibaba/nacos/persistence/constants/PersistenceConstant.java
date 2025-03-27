@@ -39,6 +39,8 @@ public class PersistenceConstant {
     public static final String DM = "dm";
 
     public static final String KINGBASE8 = "kingbase8";
+
+    public static final String PG_SQL = "pgsql";
     
     public static final String EMPTY_DATASOURCE_PLATFORM = "";
     
