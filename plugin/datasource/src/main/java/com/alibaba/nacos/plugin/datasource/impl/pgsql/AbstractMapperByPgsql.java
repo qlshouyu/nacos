@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.plugin.datasource.constants;
+package com.alibaba.nacos.plugin.datasource.impl.pgsql;
+
+import com.alibaba.nacos.plugin.datasource.enums.king.TrustedKingFunctionEnum;
+import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 
 /**
- * The data source name.
+ * The abstract Pgsql mapper contains CRUD methods.
  *
- * @author hyx
+ * @author 高露
  **/
+public abstract class AbstractMapperByPgsql extends AbstractMapper {
 
-public class DataSourceConstant {
-    public static final String MYSQL = "mysql";
-    
-    public static final String DERBY = "derby";
-
-    public static final String DM = "dm";
-
-    public static final String KINGBASE8 = "kingbase8";
-
-    public static final String PG_SQL = "pgsql";
+    @Override
+    public String getFunction(String functionName) {
+        return TrustedKingFunctionEnum.getFunctionByName(functionName);
+    }
 }

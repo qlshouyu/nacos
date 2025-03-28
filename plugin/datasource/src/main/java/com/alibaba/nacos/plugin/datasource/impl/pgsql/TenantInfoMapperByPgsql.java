@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.plugin.datasource.constants;
+package com.alibaba.nacos.plugin.datasource.impl.pgsql;
+
+import com.alibaba.nacos.plugin.datasource.constants.DataSourceConstant;
+import com.alibaba.nacos.plugin.datasource.mapper.TenantInfoMapper;
 
 /**
- * The data source name.
+ * The Pgsql implementation of TenantInfoMapper.
  *
- * @author hyx
+ * @author 高露
  **/
 
-public class DataSourceConstant {
-    public static final String MYSQL = "mysql";
-    
-    public static final String DERBY = "derby";
+public class TenantInfoMapperByPgsql extends AbstractMapperByPgsql implements TenantInfoMapper {
 
-    public static final String DM = "dm";
-
-    public static final String KINGBASE8 = "kingbase8";
-
-    public static final String PG_SQL = "pgsql";
+    @Override
+    public String getDataSource() {
+        return DataSourceConstant.PG_SQL;
+    }
 }

@@ -43,3 +43,13 @@ com.alibaba.nacos.plugin.datasource.impl.king.HistoryConfigInfoMapperByKing
 com.alibaba.nacos.plugin.datasource.impl.king.TenantInfoMapperByKing
 com.alibaba.nacos.plugin.datasource.impl.king.TenantCapacityMapperByKing
 com.alibaba.nacos.plugin.datasource.impl.king.GroupCapacityMapperByKing
+
+com.alibaba.nacos.plugin.datasource.impl.pgsql.ConfigInfoBetaMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.ConfigInfoMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.ConfigInfoTagMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.ConfigInfoGrayMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.ConfigTagsRelationMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.HistoryConfigInfoMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.TenantInfoMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.TenantCapacityMapperByPgsql
+com.alibaba.nacos.plugin.datasource.impl.pgsql.GroupCapacityMapperByPgsql
