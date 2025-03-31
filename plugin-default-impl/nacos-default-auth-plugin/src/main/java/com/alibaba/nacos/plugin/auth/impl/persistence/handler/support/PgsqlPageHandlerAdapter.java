@@ -41,7 +41,7 @@ public class PgsqlPageHandlerAdapter implements PageHandlerAdapter {
     @Override
     public OffsetFetchResult addOffsetAndFetchNext(String fetchSql, Object[] arg, int pageNo, int pageSize) {
         if (!fetchSql.contains(AuthPageConstant.LIMIT)) {
-            fetchSql += " " + AuthPageConstant.LIMIT_SIZE;
+            fetchSql += " OFFSET ? LIMIT ?";
             List<Object> newArgsList = new ArrayList<>(Arrays.asList(arg));
             newArgsList.add((pageNo - 1) * pageSize);
             newArgsList.add(pageSize);

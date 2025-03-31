@@ -18,11 +18,10 @@ package com.alibaba.nacos.plugin.auth.impl.users;
 
 import com.alibaba.nacos.auth.config.AuthConfigs;
 import com.alibaba.nacos.common.utils.StringUtils;
-
-import com.alibaba.nacos.plugin.auth.impl.persistence.UserPersistService;
+import com.alibaba.nacos.core.utils.Loggers;
 import com.alibaba.nacos.persistence.model.Page;
 import com.alibaba.nacos.plugin.auth.impl.persistence.User;
-import com.alibaba.nacos.core.utils.Loggers;
+import com.alibaba.nacos.plugin.auth.impl.persistence.UserPersistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -42,7 +41,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Service
 public class NacosUserDetailsServiceImpl implements UserDetailsService {
-    
     private Map<String, User> userMap = new ConcurrentHashMap<>();
     
     @Autowired
@@ -71,7 +69,7 @@ public class NacosUserDetailsServiceImpl implements UserDetailsService {
     
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        
+        Loggers.AUTH.info("[LOAD-USERS] Get user:{}", username);
         User user = userMap.get(username);
         if (!authConfigs.isCachingEnabled()) {
             user = userPersistService.findUserByUsername(username);

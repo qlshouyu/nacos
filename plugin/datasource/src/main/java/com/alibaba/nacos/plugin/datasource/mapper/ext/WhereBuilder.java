@@ -28,22 +28,22 @@ import java.util.List;
  * @author haiqi.wang
  * @date 2024/08/13
  */
-public final class WhereBuilder {
+public class WhereBuilder {
     
     /**
      * Base sql.
      */
-    private final String sql;
+    protected final String sql;
     
     /**
      * Parameters.
      */
-    private final List<Object> parameters = new ArrayList<>();
+    protected final List<Object> parameters = new ArrayList<>();
     
     /**
      * Where Conditional.
      */
-    private final StringBuilder where = new StringBuilder(" WHERE ");
+    protected final StringBuilder where = new StringBuilder(" WHERE ");
     
     /**
      * Default Construct.
