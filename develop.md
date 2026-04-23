@@ -5,6 +5,7 @@ idea右侧->Plugins->checkstyle:checkstyle
 ## 编译
 ```shell
 mvn clean install -DskipTests -Prelease-nacos
+# 编译生成后再distribution/target目录
 ```
 ## 调试
 - JVM参数
